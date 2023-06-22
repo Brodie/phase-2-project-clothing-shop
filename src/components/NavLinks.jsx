@@ -1,20 +1,39 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+const styles = {
+  display: "Flex",
+  justifyContent: "Center",
+  width: "100px",
+  padding: "12px",
+  margin: "0 6px 6px",
+  background: "brown",
+  textDecoration: "none",
+  color: "white",
+};
+
 function NavLinks() {
   return (
-    <div>
-      <NavLink exact to="/tops">
+    <div className="nav-bar">
+      <NavLink exact to="/tops" style={styles}>
         Tops
       </NavLink>
-      <NavLink exact to="/bottoms">
+      <NavLink exact to="/bottoms" style={styles}>
         Bottoms
       </NavLink>
-      <NavLink exact to="/accessories">
+      <NavLink exact to="/accessories" style={styles}>
         Accessories
       </NavLink>
     </div>
   );
 }
 
-export default NavLinks;
+function HomeLink() {
+  return (
+    <NavLink exact to="/" style={styles}>
+      Home
+    </NavLink>
+  );
+}
+
+export { NavLinks, HomeLink };

@@ -1,7 +1,13 @@
 import React from "react";
+import { HomeLink } from "./NavLinks";
 
 function Accessories() {
-  return <div>Accessories</div>;
+  return (
+    <>
+      <HomeLink />
+      <h2>Accessories</h2>
+    </>
+  );
 }
 
 export default Accessories;

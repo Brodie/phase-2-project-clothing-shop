@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavLinks from "./NavLinks";
+import { NavLinks } from "./NavLinks";
 import Header from "./Header";
 
 function Home() {
