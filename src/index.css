@@ -11,3 +11,7 @@ body {
   justify-content: center;
   gap: 10px;
 }
+
+.content-image {
+  width: 300px;
+}
