@@ -14,14 +14,14 @@ function Tops() {
   }, []);
 
   const topsToDisplay = tops.map((top) => {
-    return <TopCard top={top} />;
+    return <TopCard key={top.id} top={top} />;
   });
 
   return (
     <>
       <HomeLink />
       <h2>Tops</h2>
-      <div>{topsToDisplay}</div>
+      <div className="top-card-container">{topsToDisplay}</div>
     </>
   );
 }
