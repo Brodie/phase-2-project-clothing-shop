@@ -1,8 +1,7 @@
 import React from "react";
 
 function Header() {
-  console.log("boo");
-  return <h1>Yo Mama</h1>;
+  return <h1 className="header">Cool Clothing Company</h1>;
 }
 
 export default Header;
