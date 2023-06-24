@@ -27,7 +27,7 @@ function TopCard({ top }) {
         <option value={Object.values(sizes[2])}>{sizes[2].size}</option>
       </select>
       {inStock ? (
-        <BuyModal size={size} />
+        <BuyModal top={top} size={size} />
       ) : (
         <Button disabled>Out of Stock</Button>
       )}

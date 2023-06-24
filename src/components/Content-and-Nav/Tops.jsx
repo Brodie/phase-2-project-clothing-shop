@@ -8,9 +8,9 @@ function Tops() {
   const [tops, setTops] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/clothing/")
+    fetch("http://localhost:4000/tops/")
       .then((r) => r.json())
-      .then((data) => setTops(data.tops));
+      .then((data) => setTops(data));
   }, []);
 
   const topsToDisplay = tops.map((top) => {
