@@ -21,4 +21,17 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 5%;
+  border: 2px solid black;
+}
+
+.top-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid purple;
+}
+
+.size-dropdown {
+  margin-left: 80%;
+  width: 60px;
 }
