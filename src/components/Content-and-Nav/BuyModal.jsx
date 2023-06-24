@@ -16,10 +16,35 @@ function BuyModal({ size, top }) {
   const handleShow = () => setShow(true);
 
   const handlePurchase = () => {
-    fetch("http://localhost:4000/tops/2")
+    const findIndex = () => {
+      if (size === "Small") {
+        return 0;
+      } else if (size === "Med") {
+        return 1;
+      } else if (size === "Large") {
+        return 2;
+      }
+    };
+    const sizeIndex = findIndex();
+
+    const updatedSizes = [...top.sizes];
+    updatedSizes[sizeIndex] = {
+      size,
+      inStock: false,
+    };
+    console.log(updatedSizes);
+
+    fetch(`http://localhost:4000/tops/${top.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sizes: updatedSizes,
+      }),
+    })
       .then((r) => r.json())
-      .then((d) => console.log(d));
-    handleClose();
+      .then((d) => handleClose());
   };
 
   return (
