@@ -9,7 +9,7 @@ const modalStyle = {
   flexWrap: "wrap",
 };
 
-function BuyModal({ size, top }) {
+function BuyModal({ size, top, setInStock }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -45,6 +45,7 @@ function BuyModal({ size, top }) {
     })
       .then((r) => r.json())
       .then((d) => handleClose());
+    setInStock(false);
   };
 
   return (
