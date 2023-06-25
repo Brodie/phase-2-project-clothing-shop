@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Header />
-      <div>
+      <div className="nav-item-bar">
         <NavLinks />
         <NewItem />
       </div>

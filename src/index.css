@@ -35,3 +35,9 @@ body {
   margin-left: 80%;
   width: 60px;
 }
+
+.nav-item-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

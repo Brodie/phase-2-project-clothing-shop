@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import BuyModal from "../Content-and-Nav/BuyModal";
+import BuyModal from "../Modals/BuyModal";
 import { Button } from "react-bootstrap";
 
 function TopCard({ top }) {

@@ -10,6 +10,7 @@ const styles = {
   background: "brown",
   textDecoration: "none",
   color: "white",
+  borderRadius: "10px",
 };
 
 function NavLinks() {
