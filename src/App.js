@@ -5,6 +5,7 @@ import "./index.css";
 import Tops from "./components/Content-and-Nav/Tops";
 import Bottoms from "./components/Content-and-Nav/Bottoms";
 import Accessories from "./components/Content-and-Nav/Accessories";
+import Admin from "./components/Content-and-Nav/Admin";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route exact path="/accessories">
           <Accessories />
+        </Route>
+        <Route exact path="/admin">
+          <Admin />
         </Route>
       </Switch>
     </div>

@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const styles = {
   display: "Flex",
   justifyContent: "Center",
-  width: "100px",
-  padding: "12px",
+  width: "110px",
+  padding: "15px",
   margin: "0 6px 6px",
   background: "brown",
   textDecoration: "none",
@@ -23,6 +23,9 @@ function NavLinks() {
       </NavLink>
       <NavLink exact to="/accessories" style={styles}>
         Accessories
+      </NavLink>
+      <NavLink exact to="/admin" style={styles}>
+        +New Item
       </NavLink>
     </div>
   );
