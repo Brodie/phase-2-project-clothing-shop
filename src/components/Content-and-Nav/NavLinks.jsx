@@ -24,9 +24,6 @@ function NavLinks() {
       <NavLink exact to="/accessories" style={styles}>
         Accessories
       </NavLink>
-      <NavLink exact to="/admin" style={styles}>
-        +New Item
-      </NavLink>
     </div>
   );
 }
