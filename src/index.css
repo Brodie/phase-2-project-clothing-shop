@@ -41,3 +41,9 @@ body {
   justify-content: center;
   gap: 20px;
 }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

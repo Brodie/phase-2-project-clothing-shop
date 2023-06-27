@@ -1,7 +1,12 @@
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { useState } from "react";
 
 function FormModal(props) {
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [info, setInfo] = useState("");
+
   return (
     <Modal
       {...props}
@@ -15,15 +20,35 @@ function FormModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <form className="modal-form">
+          <label htmlFor="description">Item Name:</label>
+          <input
+            type="text"
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <label htmlFor="price">Price:</label>
+          <input
+            type="text"
+            id="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <label htmlFor="info">Product Info:</label>
+          <textarea
+            style={{ height: "80px" }}
+            type="text"
+            id="info"
+            value={info}
+            onChange={(e) => setInfo(e.target.value)}
+          />
+        </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button style={{ backgroundColor: "brown" }} onClick={props.onHide}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );
