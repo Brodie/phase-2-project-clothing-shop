@@ -1,4 +1,4 @@
-import { Modal, useAccordionButton } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
@@ -11,6 +11,32 @@ function FormModal(props) {
   const [smallCheck, setSmallCheck] = useState(false);
   const [medCheck, setMedCheck] = useState(false);
   const [largeCheck, setLargeCheck] = useState(false);
+  const [itemType, setItemType] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const formObj = {
+      description,
+      price: parseFloat(price),
+      sizes: [
+        {
+          size: "Small",
+          inStock: smallCheck,
+        },
+        {
+          size: "Med",
+          inStock: medCheck,
+        },
+        {
+          size: "Large",
+          inStock: largeCheck,
+        },
+      ],
+      image: imageFile ? imageFile : imageUrl,
+      info,
+    };
+    console.log(formObj, itemType);
+  }
 
   return (
     <Modal
@@ -25,7 +51,11 @@ function FormModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form className="modal-form">
+        <form
+          className="modal-form"
+          id="newItemForm"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <div className="form-left-side">
             <label htmlFor="description">Item Name:</label>
             <input
@@ -34,6 +64,7 @@ function FormModal(props) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
+            <br></br>
             <label htmlFor="price">Price:</label>
             <input
               type="text"
@@ -41,6 +72,7 @@ function FormModal(props) {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
+            <br></br>
             <label htmlFor="info">Product Info:</label>
             <textarea
               style={{ height: "80px" }}
@@ -101,17 +133,42 @@ function FormModal(props) {
               />
               <label htmlFor="large">Large</label>
             </div>
-            <div>
-              <input type="radio" id="top" name="typeOfProduct" />
-              <label htmlFor="top">Top</label>
-            </div>
-            <div>
-              <input type="radio" id="bottom" name="typeOfProduct" />
-              <label htmlFor="bottom">Bottom</label>
-            </div>
-            <div>
-              <input type="radio" id="accessory" name="typeOfProduct" />
-              <label htmlFor="accessory">Accessory</label>
+            <br></br>
+            <label htmlFor="radios">Select Item Type:</label>
+            <div className="radios">
+              <div>
+                <input
+                  type="radio"
+                  id="top"
+                  name="typeOfProduct"
+                  value="Top"
+                  checked={itemType === "Top"}
+                  onChange={(e) => setItemType(e.target.value)}
+                />
+                <label htmlFor="top">Top</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="bottom"
+                  name="typeOfProduct"
+                  value="Bottom"
+                  checked={itemType === "Bottom"}
+                  onChange={(e) => setItemType(e.target.value)}
+                />
+                <label htmlFor="bottom">Bottom</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="accessory"
+                  name="typeOfProduct"
+                  value="Accessory"
+                  checked={itemType === "Accessory"}
+                  onChange={(e) => setItemType(e.target.value)}
+                />
+                <label htmlFor="accessory">Accessory</label>
+              </div>
             </div>
           </div>
         </form>
@@ -119,6 +176,14 @@ function FormModal(props) {
       <Modal.Footer>
         <Button style={{ backgroundColor: "brown" }} onClick={props.onHide}>
           Close
+        </Button>
+        <Button
+          style={{ backgroundColor: "brown" }}
+          type="submit"
+          form="newItemForm"
+          onClick={props.onHide}
+        >
+          Submit
         </Button>
       </Modal.Footer>
     </Modal>
