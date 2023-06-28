@@ -4,9 +4,9 @@ import { useEffect } from "react";
 
 function Bottoms() {
   useEffect(() => {
-    fetch("http://localhost:4000/clothing/")
+    fetch("https://phase-2-project-backend.onrender.com/bottoms")
       .then((r) => r.json())
-      .then((data) => console.log(data.bottoms));
+      .then((data) => console.log(data));
   }, []);
 
   return (

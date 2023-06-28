@@ -8,7 +8,7 @@ function Tops() {
   const [tops, setTops] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/tops/")
+    fetch("https://phase-2-project-backend.onrender.com/tops")
       .then((r) => r.json())
       .then((data) => setTops(data));
   }, []);
