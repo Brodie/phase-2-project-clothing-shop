@@ -44,6 +44,16 @@ body {
 
 .modal-form {
   display: flex;
+  gap: 10px;
+}
+
+.form-left-side {
+  display: flex;
   flex-direction: column;
   width: 50%;
+}
+
+.form-right-side {
+  display: flex;
+  flex-direction: column;
 }
