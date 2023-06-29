@@ -7,13 +7,28 @@ function TopCard({ top }) {
   const { image, description, price, info, sizes } = top;
   const [size, setSize] = useState(sizes[0].size);
   const [inStock, setInStock] = useState(sizes[0].inStock);
+  const [smallInStock, setSmallInStock] = useState(sizes[0].inStock);
+  const [medInStock, setMedInStock] = useState(sizes[1].inStock);
+  const [largeInStock, setLargeInStock] = useState(sizes[2].inStock);
+  const [passedStocker, setPassedStocker] = useState("");
 
   function handleChange(e) {
     const sizeValue = e.target.value.split(",")[0];
-    const stockValue = e.target.value.split(",")[1] === "true";
-    setInStock(stockValue);
+
+    if (sizeValue === "Small") {
+      setInStock(smallInStock === true);
+      setPassedStocker({ stocker: (bool) => setSmallInStock(bool) });
+    } else if (sizeValue === "Med") {
+      setInStock(() => medInStock === true);
+      setPassedStocker({ stocker: (bool) => setMedInStock(bool) });
+    } else if (sizeValue === "Large") {
+      setInStock(largeInStock === true);
+      setPassedStocker({ stocker: (bool) => setLargeInStock(bool) });
+    }
     setSize(sizeValue);
   }
+
+  const tops = "tops";
 
   return (
     <div className="top-card">
@@ -27,9 +42,15 @@ function TopCard({ top }) {
         <option value={Object.values(sizes[2])}>{sizes[2].size}</option>
       </select>
       {inStock ? (
-        <BuyModal top={top} size={size} setInStock={setInStock} />
+        <BuyModal
+          typeOfItem={tops}
+          top={top}
+          size={size}
+          passedStocker={passedStocker.stocker}
+          setInStock={setInStock}
+        />
       ) : (
-        <Button disabled>Out of Stock</Button>
+        <Button disabled={true}>Out of Stock</Button>
       )}
     </div>
   );

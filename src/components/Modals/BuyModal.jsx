@@ -9,7 +9,7 @@ const modalStyle = {
   flexWrap: "wrap",
 };
 
-function BuyModal({ size, top, setInStock }) {
+function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -34,17 +34,21 @@ function BuyModal({ size, top, setInStock }) {
     };
     console.log(updatedSizes);
 
-    fetch(`https://phase-2-project-backend.onrender.com/tops/${top.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        sizes: updatedSizes,
-      }),
-    })
+    fetch(
+      `https://phase-2-project-backend.onrender.com/${typeOfItem}/${top.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sizes: updatedSizes,
+        }),
+      }
+    )
       .then((r) => r.json())
       .then((d) => handleClose());
+    passedStocker(false);
     setInStock(false);
   };
 
