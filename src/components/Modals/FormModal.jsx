@@ -64,7 +64,7 @@ function FormModal(props) {
       body: JSON.stringify(formObj),
     })
       .then((r) => r.json())
-      .then((d) => useHistory.push(`/${itemType}`));
+      .then(() => history.push(`/${itemType}`));
   }
 
   return (
