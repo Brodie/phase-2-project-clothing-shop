@@ -12,6 +12,7 @@ function FormModal(props) {
   const [medCheck, setMedCheck] = useState(false);
   const [largeCheck, setLargeCheck] = useState(false);
   const [itemType, setItemType] = useState("");
+  const history = useHistory();
 
   function resetForm() {
     setDescription("");
@@ -55,6 +56,17 @@ function FormModal(props) {
       image: imageUrl,
       info,
     };
+    console.log(itemType, formObj);
+    history.push(`/${itemType}`);
+    //     fetch(`https://phase-2-project-backend.onrender.com/${itemType}`, {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(formObj),
+    //     })
+    //       .then((r) => r.json())
+    //       .then((d) => useHistory.push(`/${itemType}`));
   }
 
   return (
@@ -148,8 +160,8 @@ function FormModal(props) {
                   type="radio"
                   id="top"
                   name="typeOfProduct"
-                  value="Top"
-                  checked={itemType === "Top"}
+                  value="tops"
+                  checked={itemType === "tops"}
                   onChange={(e) => setItemType(e.target.value)}
                 />
                 <label htmlFor="top">Top</label>
@@ -159,8 +171,8 @@ function FormModal(props) {
                   type="radio"
                   id="bottom"
                   name="typeOfProduct"
-                  value="Bottom"
-                  checked={itemType === "Bottom"}
+                  value="bottoms"
+                  checked={itemType === "bottoms"}
                   onChange={(e) => setItemType(e.target.value)}
                 />
                 <label htmlFor="bottom">Bottom</label>
@@ -170,8 +182,8 @@ function FormModal(props) {
                   type="radio"
                   id="accessory"
                   name="typeOfProduct"
-                  value="Accessory"
-                  checked={itemType === "Accessory"}
+                  value="accessories"
+                  checked={itemType === "accessories"}
                   onChange={(e) => setItemType(e.target.value)}
                 />
                 <label htmlFor="accessory">Accessory</label>
