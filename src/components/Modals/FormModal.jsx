@@ -56,17 +56,15 @@ function FormModal(props) {
       image: imageUrl,
       info,
     };
-    console.log(itemType, formObj);
-    history.push(`/${itemType}`);
-    //     fetch(`https://phase-2-project-backend.onrender.com/${itemType}`, {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(formObj),
-    //     })
-    //       .then((r) => r.json())
-    //       .then((d) => useHistory.push(`/${itemType}`));
+    fetch(`https://phase-2-project-backend.onrender.com/${itemType}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formObj),
+    })
+      .then((r) => r.json())
+      .then((d) => useHistory.push(`/${itemType}`));
   }
 
   return (
