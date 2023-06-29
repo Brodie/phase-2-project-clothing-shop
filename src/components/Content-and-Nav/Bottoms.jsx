@@ -20,7 +20,7 @@ function Bottoms() {
     <>
       <HomeLink />
       <h2>Bottoms</h2>
-      <div>{bottomsToDisplay}</div>
+      <div className="bottoms-container">{bottomsToDisplay}</div>
     </>
   );
 }

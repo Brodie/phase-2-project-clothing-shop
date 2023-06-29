@@ -34,6 +34,7 @@ function TopCard({ top, typeOf }) {
       <h1>{description}</h1>
       <h2>{info}</h2>
       <h2>{price}</h2>
+
       <select className="size-dropdown" onChange={handleChange}>
         <option value={Object.values(sizes[0])}>{sizes[0].size}</option>
         <option value={Object.values(sizes[1])}>{sizes[1].size}</option>
@@ -48,7 +49,9 @@ function TopCard({ top, typeOf }) {
           setInStock={setInStock}
         />
       ) : (
-        <Button disabled={true}>Out of Stock</Button>
+        <Button style={{ backgroundColor: "brown" }} disabled={true}>
+          Out of Stock
+        </Button>
       )}
     </div>
   );

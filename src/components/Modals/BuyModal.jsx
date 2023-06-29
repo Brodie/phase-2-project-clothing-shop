@@ -54,7 +54,7 @@ function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className="buy-buttons" variant="primary" onClick={handleShow}>
         Purchase
       </Button>
 
@@ -70,10 +70,18 @@ function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
           <h3>Price: {top.price}</h3>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            className="buy-buttons"
+            onClick={handleClose}
+          >
             Cancel
           </Button>
-          <Button variant="primary" onClick={handlePurchase}>
+          <Button
+            variant="primary"
+            className="buy-buttons"
+            onClick={handlePurchase}
+          >
             Save Changes
           </Button>
         </Modal.Footer>

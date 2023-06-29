@@ -29,11 +29,14 @@ body {
   flex-direction: column;
   width: 300px;
   border: 2px solid purple;
+  justify-content: space-between;
 }
 
 .size-dropdown {
   margin-left: 80%;
   width: 60px;
+  display: flex;
+  margin-bottom: 0;
 }
 
 .nav-item-bar {
@@ -56,4 +59,20 @@ body {
 .form-right-side {
   display: flex;
   flex-direction: column;
+}
+
+.bottoms-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  border: 2px solid black;
+}
+
+.buy-buttons {
+  background-color: brown;
+  border: 1px solid black;
+}
+.buy-buttons:hover {
+  background-color: red;
 }
