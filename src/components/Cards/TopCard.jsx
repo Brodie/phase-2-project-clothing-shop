@@ -3,7 +3,7 @@ import { useState } from "react";
 import BuyModal from "../Modals/BuyModal";
 import { Button } from "react-bootstrap";
 
-function TopCard({ top }) {
+function TopCard({ top, typeOf }) {
   const { image, description, price, info, sizes } = top;
   const [size, setSize] = useState(sizes[0].size);
   const [inStock, setInStock] = useState(sizes[0].inStock);
@@ -28,8 +28,6 @@ function TopCard({ top }) {
     setSize(sizeValue);
   }
 
-  const tops = "tops";
-
   return (
     <div className="top-card">
       <img className="content-image" src={image}></img>
@@ -43,7 +41,7 @@ function TopCard({ top }) {
       </select>
       {inStock ? (
         <BuyModal
-          typeOfItem={tops}
+          typeOfItem={typeOf}
           top={top}
           size={size}
           passedStocker={passedStocker.stocker}
