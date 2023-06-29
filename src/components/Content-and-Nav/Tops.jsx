@@ -14,7 +14,7 @@ function Tops() {
   }, []);
 
   const topsToDisplay = tops.map((top) => {
-    return <TopCard key={top.id} top={top} />;
+    return <TopCard key={top.id} top={top} typeOf="tops" />;
   });
 
   return (
