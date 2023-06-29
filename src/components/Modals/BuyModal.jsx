@@ -34,7 +34,7 @@ function BuyModal({ size, top, setInStock }) {
     };
     console.log(updatedSizes);
 
-    fetch(`http://localhost:4000/tops/${top.id}`, {
+    fetch(`https://phase-2-project-backend.onrender.com/tops/${top.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
