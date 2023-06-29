@@ -1,17 +1,37 @@
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function FormModal(props) {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [info, setInfo] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [imageFile, setImageFile] = useState("");
   const [smallCheck, setSmallCheck] = useState(false);
   const [medCheck, setMedCheck] = useState(false);
   const [largeCheck, setLargeCheck] = useState(false);
   const [itemType, setItemType] = useState("");
+
+  function resetForm() {
+    setDescription("");
+    setPrice("");
+    setInfo("");
+    setImageUrl("");
+    setSmallCheck(false);
+    setMedCheck(false);
+    setLargeCheck(false);
+    setItemType("");
+    props.onHide();
+  }
+
+  function handlePrice(e) {
+    setPrice(checkPriceValue(e.target.value));
+  }
+  function checkPriceValue(value) {
+    const regex = /([0-9]*[\.|\,]{0,1}[0-9]{0,2})/s;
+    return value.match(regex)[0];
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,10 +52,9 @@ function FormModal(props) {
           inStock: largeCheck,
         },
       ],
-      image: imageFile ? imageFile : imageUrl,
+      image: imageUrl,
       info,
     };
-    console.log(formObj, itemType);
   }
 
   return (
@@ -65,12 +84,12 @@ function FormModal(props) {
               onChange={(e) => setDescription(e.target.value)}
             />
             <br></br>
-            <label htmlFor="price">Price:</label>
+            <label htmlFor="price">Price: </label>
             <input
               type="text"
               id="price"
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => handlePrice(e)}
             />
             <br></br>
             <label htmlFor="info">Product Info:</label>
@@ -83,27 +102,15 @@ function FormModal(props) {
             />
           </div>
           <div className="form-right-side">
-            <label htmlFor="imageUrl">Paste Image URL or Upload File:</label>
+            <label htmlFor="imageUrl">Paste Image URL:</label>
             <input
               type="text"
               id="imageUrl"
               value={imageUrl}
+              style={{ width: "150%" }}
               onChange={(e) => setImageUrl(e.target.value)}
             />
 
-            <label
-              htmlFor="imageFile"
-              style={{ color: "red", fontWeight: "bold" }}
-            >
-              If both used, only file upload will be saved!
-            </label>
-
-            <input
-              type="file"
-              id="imageFile"
-              value={imageFile}
-              onChange={(e) => setImageFile(e.target.value)}
-            />
             <br></br>
             <label htmlFor="sizeCheckbox">Select available Sizes</label>
             <div>
@@ -174,7 +181,7 @@ function FormModal(props) {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button style={{ backgroundColor: "brown" }} onClick={props.onHide}>
+        <Button style={{ backgroundColor: "brown" }} onClick={resetForm}>
           Close
         </Button>
         <Button
