@@ -12,6 +12,7 @@ const styles = {
   background: "brown",
   textDecoration: "none",
   color: "white",
+  border: "2px solid black",
 };
 
 function NewItem() {

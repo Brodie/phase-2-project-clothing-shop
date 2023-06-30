@@ -1,7 +1,6 @@
 import React from "react";
 import { HomeLink } from "./NavLinks";
 import { useEffect, useState } from "react";
-import TopCard from "../Cards/TopCard";
 import AccessoryCard from "../Cards/AccessoryCard";
 
 function Accessories() {
