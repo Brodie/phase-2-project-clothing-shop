@@ -19,8 +19,20 @@ function Tops() {
 
   return (
     <>
-      <HomeLink />
-      <h2>Tops</h2>
+      <h2 className="tops-header">
+        <HomeLink />
+        <span
+          style={{
+            backgroundColor: "antiquewhite",
+            padding: "4px",
+            border: "2px solid brown",
+            width: "80px",
+            marginLeft: "10px",
+          }}
+        >
+          Tops
+        </span>
+      </h2>
       <div className="top-card-container">{topsToDisplay}</div>
     </>
   );

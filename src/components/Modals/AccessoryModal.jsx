@@ -6,6 +6,8 @@ const modalStyle = {
   display: "flex",
   justifyContent: "center",
   flexWrap: "wrap",
+  // marginRight: "20%",
+  gap: "50px",
 };
 
 function AccessoryModal({ top, typeOf }) {
@@ -31,8 +33,17 @@ function AccessoryModal({ top, typeOf }) {
         </Modal.Header>
         <Modal.Body style={modalStyle}>
           <img src={top.image} style={{ width: "30%" }}></img>
-          <h2>1 {top.description}</h2>
-          <h3>Price: {top.price}</h3>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <h2>1 {top.description}</h2>
+            <br></br>
+            <h3>Price: {top.price}</h3>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button
