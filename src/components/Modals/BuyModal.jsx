@@ -64,7 +64,11 @@ function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
           <Modal.Title>Confirm Purchase:</Modal.Title>
         </Modal.Header>
         <Modal.Body style={modalStyle}>
-          <img src={top.image} style={{ width: "30%" }}></img>
+          <img
+            src={top.image}
+            style={{ width: "30%" }}
+            alt="Image Failed to Load :("
+          ></img>
           <h2>
             1 {size} {top.description}
           </h2>

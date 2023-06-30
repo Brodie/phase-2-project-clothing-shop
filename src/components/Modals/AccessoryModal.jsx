@@ -32,7 +32,11 @@ function AccessoryModal({ top, typeOf }) {
           <Modal.Title>Confirm Purchase:</Modal.Title>
         </Modal.Header>
         <Modal.Body style={modalStyle}>
-          <img src={top.image} style={{ width: "30%" }}></img>
+          <img
+            src={top.image}
+            style={{ width: "30%" }}
+            alt="Image Failed to Load :("
+          ></img>
           <div
             style={{
               display: "flex",
