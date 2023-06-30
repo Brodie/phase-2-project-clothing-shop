@@ -36,7 +36,8 @@ function FormModal(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const formObj = {
+
+    let formObj = {
       description,
       price: parseFloat(price),
       sizes: [
@@ -56,6 +57,16 @@ function FormModal(props) {
       image: imageUrl,
       info,
     };
+
+    if (itemType === "accessories") {
+      formObj = {
+        description,
+        price: parseFloat(price),
+        image: imageUrl,
+        info,
+      };
+    }
+
     fetch(`https://phase-2-project-backend.onrender.com/${itemType}`, {
       method: "POST",
       headers: {

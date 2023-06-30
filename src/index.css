@@ -28,13 +28,13 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
-  border: 2px solid purple;
+  border: 3px solid black;
   justify-content: space-between;
 }
 
 .size-dropdown {
-  margin-left: 80%;
-  width: 60px;
+  margin-left: 76%;
+  width: 70px;
   display: flex;
   margin-bottom: 0;
 }
@@ -75,4 +75,11 @@ body {
 }
 .buy-buttons:hover {
   background-color: red;
+}
+
+.accessories-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
 }
