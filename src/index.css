@@ -21,7 +21,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 5%;
-  background-color: antiquewhite;
+  background-color: #d4b785;
 }
 
 .top-card {
@@ -68,7 +68,9 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 5%;
-  border: 2px solid black;
+  border: 2px solid #fcfcfe;
+
+  background-color: #d4b785;
 }
 
 .buy-buttons {

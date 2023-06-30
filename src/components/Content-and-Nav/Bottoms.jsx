@@ -18,8 +18,20 @@ function Bottoms() {
 
   return (
     <>
-      <HomeLink />
-      <h2>Bottoms</h2>
+      <h2 className="tops-header">
+        <HomeLink />
+        <span
+          style={{
+            backgroundColor: "antiquewhite",
+            padding: "4px",
+            border: "2px solid brown",
+            width: "140px",
+            marginLeft: "10px",
+          }}
+        >
+          Bottoms
+        </span>
+      </h2>
       <div className="bottoms-container">{bottomsToDisplay}</div>
     </>
   );
