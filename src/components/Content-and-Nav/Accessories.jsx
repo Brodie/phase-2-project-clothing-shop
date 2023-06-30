@@ -18,9 +18,21 @@ function Accessories() {
 
   return (
     <>
-      <HomeLink />
-      <h2>Accessories</h2>
-      <div className="accessories-container">{displayAccessories}</div>
+      <h2 className="tops-header">
+        <HomeLink />
+        <span
+          style={{
+            backgroundColor: "antiquewhite",
+            padding: "4px",
+            border: "2px solid brown",
+            width: "180px",
+            marginLeft: "10px",
+          }}
+        >
+          Accessories
+        </span>
+      </h2>
+      <div className="content-container">{displayAccessories}</div>
     </>
   );
 }

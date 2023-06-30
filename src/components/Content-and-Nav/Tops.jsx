@@ -33,7 +33,7 @@ function Tops() {
           Tops
         </span>
       </h2>
-      <div className="top-card-container">{topsToDisplay}</div>
+      <div className="content-container">{topsToDisplay}</div>
     </>
   );
 }

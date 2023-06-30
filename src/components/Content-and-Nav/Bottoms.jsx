@@ -32,7 +32,7 @@ function Bottoms() {
           Bottoms
         </span>
       </h2>
-      <div className="bottoms-container">{bottomsToDisplay}</div>
+      <div className="content-container">{bottomsToDisplay}</div>
     </>
   );
 }

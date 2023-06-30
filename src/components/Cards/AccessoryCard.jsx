@@ -8,9 +8,9 @@ function AccessoryCard({ accessory, typeOf }) {
   return (
     <div className="top-card">
       <img className="content-image" src={image}></img>
-      <h1>{description}</h1>
-      <h2>{info}</h2>
-      <h2>{price}</h2>
+      <h1 className="item-description">{description}</h1>
+      <h3 className="item-info">{info}</h3>
+      <h4 className="item-price">{price}</h4>
       <AccessoryModal typeOfItem={typeOf} top={accessory} size=" " />
     </div>
   );
