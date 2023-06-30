@@ -48,6 +48,7 @@ function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
     )
       .then((r) => r.json())
       .then((d) => handleClose());
+    alert("Item Successfully Purchased!");
     passedStocker(false);
     setInStock(false);
   };
