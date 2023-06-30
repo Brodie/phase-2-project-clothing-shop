@@ -30,7 +30,9 @@ body {
   width: 300px;
   border: 3px solid black;
   justify-content: space-between;
-  background-color: lightgrey;
+  background-image: url("https://img.freepik.com/free-vector/abstract-geometric-pattern_1319-110.jpg?w=740&t=st=1688148758~exp=1688149358~hmac=7deeb81c22a268d196137998096bc9a2b10cdfc59225d9a1d2cb3f886a83652b");
+
+  /* background-color: lightgrey; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -90,12 +92,25 @@ body {
 }
 
 .item-description {
-  border-bottom: 3px solid black;
+  font-weight: bolder;
+  background-color: #ddcfb5;
+  border: #fdfffd solid 2px;
 }
 
 .item-info {
   border-bottom: 2px black solid;
   padding-bottom: 6px;
+  background-color: #ddcfb5;
+  border: #fdfffd solid 2px;
+  font-weight: bold;
+}
+
+.item-price {
+  margin-right: 0;
+  font-weight: bolder;
+  background-color: #ddcfb5;
+  border: #fdfffd solid 2px;
+  width: 100px;
 }
 
 .tops-header {
