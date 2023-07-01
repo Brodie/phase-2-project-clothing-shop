@@ -13,7 +13,9 @@ function Accessories() {
   }, []);
 
   const displayAccessories = accessories.map((item) => {
-    return <AccessoryCard id={item.id} accessory={item} typeOf="accessories" />;
+    return (
+      <AccessoryCard key={item.id} accessory={item} typeOf="accessories" />
+    );
   });
 
   return (
