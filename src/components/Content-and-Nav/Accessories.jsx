@@ -27,8 +27,9 @@ function Accessories() {
             backgroundColor: "antiquewhite",
             padding: "4px",
             border: "2px solid brown",
-            width: "180px",
+            width: "220px",
             marginLeft: "10px",
+            fontFamily: "Neon Energy x, sans-serif",
           }}
         >
           Accessories

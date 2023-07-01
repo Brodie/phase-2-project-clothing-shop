@@ -1,28 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const styles = {
-  display: "Flex",
-  justifyContent: "Center",
-  width: "110px",
-  padding: "15px",
-  margin: "0 6px 6px",
-  background: "brown",
-  textDecoration: "none",
-  color: "white",
-  borderRadius: "10px",
-};
-
 function NavLinks() {
   return (
     <div className="nav-bar">
-      <NavLink exact to="/tops" style={styles}>
+      <NavLink exact to="/tops" className="nav-button">
         Tops
       </NavLink>
-      <NavLink exact to="/bottoms" style={styles}>
+      <NavLink exact to="/bottoms" className="nav-button">
         Bottoms
       </NavLink>
-      <NavLink exact to="/accessories" style={styles}>
+      <NavLink exact to="/accessories" className="nav-button">
         Accessories
       </NavLink>
     </div>
@@ -31,7 +19,7 @@ function NavLinks() {
 
 function HomeLink() {
   return (
-    <NavLink exact to="/" style={styles}>
+    <NavLink exact to="/" className="nav-button">
       Home
     </NavLink>
   );

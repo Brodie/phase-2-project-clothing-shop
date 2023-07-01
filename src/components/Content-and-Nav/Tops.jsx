@@ -26,8 +26,9 @@ function Tops() {
             backgroundColor: "antiquewhite",
             padding: "4px",
             border: "2px solid brown",
-            width: "80px",
+            width: "95px",
             marginLeft: "10px",
+            fontFamily: "Neon Energy x, sans-serif",
           }}
         >
           Tops
