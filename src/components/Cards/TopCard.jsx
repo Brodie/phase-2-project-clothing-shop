@@ -10,7 +10,9 @@ function TopCard({ top, typeOf }) {
   const [smallInStock, setSmallInStock] = useState(sizes[0].inStock);
   const [medInStock, setMedInStock] = useState(sizes[1].inStock);
   const [largeInStock, setLargeInStock] = useState(sizes[2].inStock);
-  const [passedStocker, setPassedStocker] = useState("");
+  const [passedStocker, setPassedStocker] = useState({
+    stocker: (bool) => setSmallInStock(bool),
+  });
 
   function handleChange(e) {
     const sizeValue = e.target.value.split(",")[0];
