@@ -141,3 +141,16 @@ body {
 .form-button:hover {
   background-color: red;
 }
+
+.picture-bar {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home-picture {
+  height: 70vh;
+  border: 2px solid #fcfcfe;
+}
