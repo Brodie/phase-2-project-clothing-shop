@@ -14,9 +14,10 @@ function Home() {
       );
       const jsonResponse = await fetchedObj.json();
       const imageArr = jsonResponse.map((obj) => obj.image);
-      setImages((prevImage) => [...prevImage, imageArr]);
+
+      setImages((prevImage) => [...prevImage, ...imageArr]);
     };
-    ["tops", "bottoms", "accessories"].forEach((ep) => fetchData(ep));
+    ["accessories", "bottoms", "tops"].forEach((ep) => fetchData(ep));
   }, []);
 
   const imagesDisplay = images.map((img) => {
