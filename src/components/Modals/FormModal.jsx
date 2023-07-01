@@ -29,8 +29,9 @@ function FormModal(props) {
   function handlePrice(e) {
     setPrice(checkPriceValue(e.target.value));
   }
+
   function checkPriceValue(value) {
-    const regex = /([0-9]*[\.|\,]{0,1}[0-9]{0,2})/s;
+    const regex = /([0-9]*[\.]{0,1}[0-9]{0,2})/s;
     return value.match(regex)[0];
   }
 
