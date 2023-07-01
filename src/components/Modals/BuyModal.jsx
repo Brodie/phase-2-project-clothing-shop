@@ -3,12 +3,6 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const modalStyle = {
-  display: "flex",
-  justifyContent: "center",
-  flexWrap: "wrap",
-};
-
 function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
   const [show, setShow] = useState(false);
 
@@ -59,22 +53,22 @@ function BuyModal({ size, top, setInStock, typeOfItem, passedStocker }) {
         Purchase
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={show} onHide={handleClose} className="modal-container">
+        <Modal.Header closeButton className="modal-header">
           <Modal.Title>Confirm Purchase:</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={modalStyle}>
-          <img
-            src={top.image}
-            style={{ width: "30%" }}
-            alt="Image Failed to Load :("
-          ></img>
+        <Modal.Body className="modal-body">
           <h2>
             1 {size} {top.description}
           </h2>
+          <img
+            src={top.image}
+            style={{ width: "50%" }}
+            alt="Image Failed to Load :("
+          ></img>
           <h3>Price: {top.price}</h3>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="modal-footer">
           <Button
             variant="secondary"
             className="buy-buttons"
