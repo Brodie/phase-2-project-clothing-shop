@@ -2,14 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-const modalStyle = {
-  display: "flex",
-  justifyContent: "center",
-  flexWrap: "wrap",
-  // marginRight: "20%",
-  gap: "50px",
-};
-
 function AccessoryModal({ top, typeOf }) {
   const [show, setShow] = useState(false);
 
@@ -31,10 +23,10 @@ function AccessoryModal({ top, typeOf }) {
         <Modal.Header closeButton>
           <Modal.Title>Confirm Purchase:</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={modalStyle}>
+        <Modal.Body>
           <img
             src={top.image}
-            style={{ width: "30%" }}
+            style={{ width: "50%" }}
             alt="Image Failed to Load :("
           ></img>
           <div

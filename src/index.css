@@ -79,13 +79,13 @@ body {
 
 .modal-form {
   display: flex;
-  gap: 10px;
+  gap: 50px;
 }
 
 .form-left-side {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
 }
 
 .form-right-side {
@@ -138,9 +138,11 @@ body {
 
 .form-button {
   background-color: brown;
+  border: 1px solid black;
 }
 .form-button:hover {
   background-color: red;
+  border: 1px solid black;
 }
 
 .picture-bar {
@@ -161,12 +163,9 @@ body {
   border: 2px solid #fcfcfe;
 }
 
-.modal-container {
-  font-family: "Broaek", sans-serif;
-}
-
 .modal-header {
   background-color: #d4b785;
+  font-family: "Broaek", sans-serif;
 }
 
 .modal-body {
@@ -177,7 +176,9 @@ body {
   flex-wrap: wrap;
   background-color: antiquewhite;
   gap: 10px;
+  font-family: "Broaek", sans-serif;
 }
 .modal-footer {
   background-color: #d4b785;
+  font-family: "Broaek", sans-serif;
 }
