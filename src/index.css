@@ -37,6 +37,10 @@ body {
   font-size: 1.3rem;
 }
 
+.nav-button:hover {
+  background-color: red;
+}
+
 .content-image {
   height: 400px;
 }
@@ -129,4 +133,11 @@ body {
 .tops-header {
   display: flex;
   flex-direction: column;
+}
+
+.form-button {
+  background-color: brown;
+}
+.form-button:hover {
+  background-color: red;
 }

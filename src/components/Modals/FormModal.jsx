@@ -202,11 +202,11 @@ function FormModal(props) {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Button style={{ backgroundColor: "brown" }} onClick={resetForm}>
+        <Button className="form-button" onClick={resetForm}>
           Close
         </Button>
         <Button
-          style={{ backgroundColor: "brown" }}
+          className="form-button"
           type="submit"
           form="newItemForm"
           onClick={props.onHide}
